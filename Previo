@@ -1,0 +1,33 @@
+fun main (args: Array<String>)
+{
+    var nombre: String? = null
+    var obra: String? = null
+    var anioNacimiento: Int? = null
+    var anioFallecimiento: Int? = null
+
+
+    print(" Ingrese el nombre del autor: ")
+    nombre = readlnOrNull() as String
+
+    print(" Ingrese alguna de sus obras: ")
+    obra = readlnOrNull() as String
+
+    print(" Ingrese año de nacimiento del autor: ")
+    anioNacimiento = readlnOrNull()?.toIntOrNull() as Int
+
+    print(" Ingrese año de Fallecimiento del autor: ")
+    anioFallecimiento = readlnOrNull()?.toIntOrNull() as Int
+
+
+    var edad = (lambda.invoke(anioNacimiento,anioFallecimiento))
+
+    println(datosAutor(nombre, obra, anioNacimiento, anioFallecimiento, edad))
+}
+
+fun res(a: Int, b: Int) = b - a
+val lambda = { number1: Int, number2: Int ->
+    res(number1, number2)
+
+}
+fun datosAutor(nombre: String, obra: String, anioNacimiento: Int, aniofallecimiento: Int, edad: Int) = "❀❀❀ Nombre del autor: $nombre ❀❀❀" + "\n"+ "❀❀❀ Obra: $obra ❀❀❀" + "\n"+
+        "❀❀❀ Año de Nacimiento: $anioNacimiento ❀❀❀" + "\n"+ "❀❀❀ Año de Fallecimiento: $aniofallecimiento  ❀❀❀" + "\n"+ "❀❀❀ Con $edad años de edad ❀❀❀"
